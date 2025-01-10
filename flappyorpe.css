@@ -1,0 +1,140 @@
+@font-face {
+    font-family: "Flappy Birdy";
+    src: url("./FlappyBirdy.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Nunito','Courier New', Courier, monospace;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+}
+
+#board {
+    background-image: url(background-1.jpg);
+    margin: 0 auto;
+    background-size: cover;
+    background-position: 50% 0; /* Empieza en 0% horizontalmente */
+    background-repeat: repeat-x;
+    animation: moveBackground 20s linear infinite; /* Animación continua */
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 50% 0; /* Comienza desde 0% */
+    }
+    to {
+        background-position: 100% 0; /* Termina en 100% */
+    }
+}
+
+@keyframes moveBackgroundFromZero {
+    from {
+        background-position: 0% 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+/* #board {
+    width: 100vw;
+    height: 100vh;
+} */
+
+/* #start-screen {
+    background-color: skyblue; */
+    /* background-image: url(background-1.jpg); */
+    /* width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -2;
+} */
+
+#start-interface {
+    /* margin-top: 20px; */
+    /* width: 100vw;
+    height: 10vh; */
+    position: absolute;
+    z-index: 10;
+}
+
+#start-interface::before {
+    content: ''; /* Es necesario para que el pseudo-elemento sea visible */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6; /* Ajusta la opacidad aquí */
+    z-index: -10; /* Asegúrate de que esté detrás del contenido principal */
+}
+
+h1 {
+    color: white;
+    font-size: 5rem;
+    font-family: "Flappy Birdy";
+    margin: 0;
+    padding: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animación suave */
+}
+
+h1:hover {
+    transform: scale(1.2); /* Agranda un poco la imagen */
+}
+
+span {
+    font-family:sans-serif;
+    font-weight: 900;
+}
+
+#start-interface button {
+    margin: 10px auto;
+}
+
+#logo {
+    height: auto;
+    width: 160px;
+    display: block;
+    margin: 0 auto;
+    filter: saturate(1.2);
+    filter: contrast(1.1);
+}
+
+img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animación suave */
+}
+
+img:hover {
+    transform: scale(1.5); /* Agranda un poco la imagen */
+    filter: brightness(1.2); /* Aumenta el brillo para un efecto más llamativo */
+}
+
+.btn {
+    font-size: 2rem;
+    color: white;
+    background: linear-gradient(135deg, #ff5e00, #ffc700);
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    box-shadow: 0 10px 20px rgba(255, 94, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    transform: translateY(-8px); /* Efecto flotante más notable */
+    box-shadow: 0 20px 40px rgba(255, 94, 0, 0.9); /* Intensifica la sombra al hacer hover */
+    background: linear-gradient(135deg, #ffc700, #ff5e00); /* Inversión de colores */
+}
+
+.btn:active {
+    transform: translateY(0); /* Regresa al presionar */
+    box-shadow: 0 8px 15px rgba(255, 94, 0, 0.5); /* Reduce la sombra al hacer clic */
+}
+
